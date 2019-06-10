@@ -42,4 +42,13 @@ app.get('/cipher', (req, res) => {
     res.send(text);
 })
 
+//Drill 3
+app.get('/lotto', (req, res) => {
+    const arr = req.query;
+    let testArr = [];
+    for(i = 0; i < 6; i++){
+      testArr.unshift(Math.floor(Math.random()* 20));
+    }
+});
+
 app.listen(8000);
