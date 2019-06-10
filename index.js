@@ -31,4 +31,15 @@ app.get('/sum', (req, res) => {
 
 })
 
+//Drill 2
+app.get('/cipher', (req, res) => {
+    let text = req.query.text
+    const shift = req.query.shift
+    for(i = 0; i < text.length; i++){
+        const charCode = text.charCodeAt(i);
+        text = text.replace(text[i],  String.fromCharCode(charCode + parseInt(shift)));
+    }
+    res.send(text);
+})
+
 app.listen(8000);
